@@ -1,6 +1,6 @@
 pipeline{
 
-    agents any
+    agent any
 
     stages{
         stage ('Setup'){
@@ -15,12 +15,12 @@ pipeline{
         }
         stage ('Testing'){
             steps{
-
+                sh 'echo testing'
             }
         }
         stage ('Deploy to Render'){
             steps{
-
+                sh 'echo deploying'
             }
         }
     }
