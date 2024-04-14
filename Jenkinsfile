@@ -5,14 +5,14 @@ pipeline{
     stages{
         stage ('Setup'){
             steps{
-               git credentialsId: '${env.GitHub-Token}',url: 'https://github.com/charlesmagutu/gallery.git' 
+               git credentialsId: '$GitHub-Token', url: 'https://github.com/charlesmagutu/gallery.git' 
             }
         }
-        // stage ('Install Dependencies'){
-        //     steps{
-        //         npm install
-        //     }
-        //}
+        stage ('Install Dependencies'){
+            steps{
+                sh 'npm install'
+            }
+        }
         stage ('Testing'){
             steps{
                 sh 'echo testing'
