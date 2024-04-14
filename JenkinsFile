@@ -4,7 +4,7 @@ pipeline{
     stages{
         stage ('SetUp'){
             stpes{
-
+               git 'https://github.com/charlesmagutu/gallery.git' 
             }
         }
         stage ('Install Dependencies'){
@@ -28,7 +28,7 @@ pipeline{
             stalckSend color:"good", message:"Success!,  build success"
         }
         failure{
-            slackSend color: 'danger', message: 'Failure!, build failed'
+            slackSend color: 'danger', message:"Failure!, build failed"
         }
     }
 }
