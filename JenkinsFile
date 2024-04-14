@@ -2,17 +2,33 @@ pipeline{
     agents any
 
     stages{
-        stage ('Pull Code'){
+        stage ('SetUp'){
+            stpes{
 
+            }
         }
-        stage ('Build'){
-
+        stage ('Install Dependencies'){
+            steps{
+                sh 'npm install'
+            }
         }
-        stage ('Test'){
+        stage ('Testing'){
+            steps{
 
+            }
         }
-        stage ('Deploy'){
+        stage ('Deploy to Render'){
+            steps{
 
+            }
+        }
+    }
+    post{
+        success {
+            stalckSend color:"good", message:"Success!,  build success"
+        }
+        failure{
+            slackSend color: 'danger', message: 'Failure!, build failed'
         }
     }
 }
