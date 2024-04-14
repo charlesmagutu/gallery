@@ -2,7 +2,7 @@ pipeline{
     agents any
 
     stages{
-        stage ('SetUp'){
+        stage ('Setup'){
             stpes{
                git 'https://github.com/charlesmagutu/gallery.git' 
             }
