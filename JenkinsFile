@@ -1,0 +1,25 @@
+pipeline{
+
+    agent any
+
+    stages{
+        stage ('Setup'){
+            steps{
+               git 'https://github.com/charlesmagutu/gallery.git' 
+            }
+        }
+        stage ('Install Dependencies'){
+            steps{
+                sh 'npm install'
+            }
+        }
+    }
+    post{
+        success {
+            stalckSend color:"good", message:"Success!,  build success."
+        }
+        failure{
+            slackSend color: 'danger', message:"Failure!, build failed."
+        }
+    }
+}
