@@ -16,7 +16,7 @@ pipeline{
     }
     post{
         success {
-            stalckSend color:"good", message:"Success!,  build success."
+            stalckSend color:"good", message:"Success!,  build success"
         }
         failure{
             slackSend color: 'danger', message:"Failure!, build failed."
