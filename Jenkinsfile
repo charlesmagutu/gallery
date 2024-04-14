@@ -29,7 +29,7 @@ pipeline{
             stalckSend color:"good", message:"Success!,  build success."
         }
         failure{
-            slackSend color: 'danger', message:"Failure!, build failed"
+            slackSend color: 'danger', message:"Failure!, build failed."
         }
     }
 }
