@@ -35,7 +35,8 @@ pipeline {
                     sh 'echo test failed'
 
                 }
-                success{emailext body: '',
+                success{
+                    //emailext body: '',
                     sh 'echo test success'
                 }
             }
