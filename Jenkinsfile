@@ -37,11 +37,6 @@ pipeline {
                         to : 'testingwdg804@gmail.com'
 
                 }
-                success{
-                    emailext body: 'Success! Test Success',
-                        subject: 'Test Execution Success',
-                        to : 'testingwdg804@gmail.com'
-                }
             }
         }
         stage('Deploy to Render') {
@@ -52,9 +47,6 @@ pipeline {
         post {
             success {
                 slackSend color: 'good', message: "Success! Build ${env.BUILD_NUMBER} deployed successfully. link https://gallery-pvy3.onrender.com"
-            }
-            failure {
-                slackSend color: 'danger', message: "Failure! Build ${env.BUILD_NUMBER} failed to deploy."
             }
         }
         }
