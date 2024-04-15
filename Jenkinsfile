@@ -20,7 +20,8 @@ pipeline{
         }
         stage ('Deploy to Render'){
             steps{
-                sh 'echo deploying'
+                sh 'echo deploying to render'
+                sh 'curl https://api.render.com/deploy/srv-coebg8i0si5c739dt08g?key=JdmreHEV0Sk'
             }
         }
     }
