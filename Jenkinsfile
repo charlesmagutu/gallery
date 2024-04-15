@@ -32,9 +32,10 @@ pipeline {
             }
             post{
                 failure{
-                    sh 'echo Test failed'
+                    sh 'echo test failed'
+
                 }
-                success{
+                success{emailext body: '',
                     sh 'echo test success'
                 }
             }
@@ -44,14 +45,14 @@ pipeline {
                 sh 'echo "Deploying to Render..."'
                 sh 'curl https://api.render.com/deploy/srv-coebg8i0si5c739dt08g?key=$RENDER_API_KEY'
             }
+        post {
+            success {
+                slackSend color: 'good', message: 'Success! Build ${env.BUILD_NUMBER} deployed successfully. link https://gallery-pvy3.onrender.com'
+            }
+            failure {
+                slackSend color: 'danger', message: 'Failure! Build ${env.BUILD_NUMBER} failed to deploy.'
+            }
         }
-    }
-    post {
-        success {
-            slackSend color: 'good', message: 'Success! Build successful.'
-        }
-        failure {
-            slackSend color: 'danger', message: 'Failure! Build failed.'
         }
     }
 }
