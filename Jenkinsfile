@@ -30,6 +30,14 @@ pipeline {
                 sh 'echo "Testing..."'
                 sh 'npm test'
             }
+            post{
+                failure{
+                    sh 'echo Test failed'
+                }
+                success{
+                    sh 'echo test success'
+                }
+            }
         }
         stage('Deploy to Render') {
             steps {
