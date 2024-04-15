@@ -32,11 +32,15 @@ pipeline {
             }
             post{
                 failure{
-                    sh 'echo test failed'
+                    emailext body: 'Failed! Test failed',
+                        subject: 'Test Execution Failed',
+                        to : 'testingwdg804@gmail.com'
 
                 }
                 success{
-                    sh 'echo test success'
+                    emailext body: 'Success! Test Success',
+                        subject: 'Test Execution Success',
+                        to : 'testingwdg804@gmail.com'
                 }
             }
         }
@@ -47,10 +51,10 @@ pipeline {
             }
         post {
             success {
-                slackSend color: 'good', message: 'Success! Build ${env.BUILD_NUMBER} deployed successfully. link https://gallery-pvy3.onrender.com'
+                slackSend color: 'good', message: "Success! Build ${env.BUILD_NUMBER} deployed successfully. link https://gallery-pvy3.onrender.com"
             }
             failure {
-                slackSend color: 'danger', message: 'Failure! Build ${env.BUILD_NUMBER} failed to deploy.'
+                slackSend color: 'danger', message: "Failure! Build ${env.BUILD_NUMBER} failed to deploy."
             }
         }
         }
