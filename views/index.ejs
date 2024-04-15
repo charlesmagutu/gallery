@@ -10,18 +10,25 @@
 </head>
 <body style="background-color: #f4f4f4;">
   <div class="navbar-fixed">
-    <nav class="turquoise">
-        <div class="nav-wrapper container">
-            <a href="/" class="brand-logo">Darkroom</a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="">MILESTONE 1</a></li>
-                <li><a href="">MILESTONE 2</a></li>
-                <li><a href="">MILESTONE 3</a></li>
-                <li><a href="">MILESTONE 4</a></li>
-            </ul>
-        </div>
+    <nav class="turquoise" >
+      <div class="nav-wrapper  container">
+        <a href="/" class="brand-logo ">Darkroom</a>
+        <form class="right">
+          <div class="input-field ">
+            <input id="search" class="left"  type="search" required>
+            <label class="label-icon" for="search"><i class="material-icons right">search</i></label>
+            <i class="material-icons">close</i>
+          </div>
+        </form>
+        <ul class="right hide-on-med-and-down" style="background-color: black;">
+          <li><a href="">MILESTONE 2</a></li>
+          <li><a href="">MILESTONE 3</a></li>
+          <li><a href="">MILESTONE 4</a></li>
+        </ul>
+      </div>
     </nav>
-</div>
+  </div>
+    
     <div class="container">
         <h1>Image Upload </h1>
         <%= typeof msg != 'undefined' ? msg : '' %>
