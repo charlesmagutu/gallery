@@ -15,7 +15,6 @@ pipeline {
             steps {
                 script {
                     git branch: 'master',
-                        credentialsId:"GitHub-Token", 
                         url: 'https://github.com/charlesmagutu/gallery.git'
                 }
             }
@@ -27,7 +26,6 @@ pipeline {
         }
         stage('Testing') {
             steps {
-                sh 'echo "Testing..."'
                 sh 'npm test'
             }
             post{
