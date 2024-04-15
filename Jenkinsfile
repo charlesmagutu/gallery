@@ -36,7 +36,6 @@ pipeline {
 
                 }
                 success{
-                    //emailext body: '',
                     sh 'echo test success'
                 }
             }
