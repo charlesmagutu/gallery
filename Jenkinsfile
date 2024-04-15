@@ -5,7 +5,7 @@ pipeline{
     stages{
         stage ('Setup'){
             steps{
-               git credentialsId: '$GitHub-Token', url: 'https://github.com/charlesmagutu/gallery.git' 
+               git branch: 'master', url: 'https://github.com/charlesmagutu/gallery.git' 
             }
         }
         stage ('Install Dependencies'){
