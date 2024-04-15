@@ -16,6 +16,7 @@ pipeline{
         stage ('Testing'){
             steps{
                 sh 'echo testing'
+                sh 'npm test'
             }
         }
         stage ('Deploy to Render'){
