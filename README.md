@@ -1,4 +1,4 @@
 #Gallery app
 
 ### Jenkis pipeline
-![pipeline]('./pipeline/pipeline.png')
+![pipeline](./pipeline/pipeline.png)
