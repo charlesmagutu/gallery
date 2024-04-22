@@ -47,6 +47,6 @@ pipeline {
                 slackSend channel: '#charlesondabu_ip1', color: 'good', message: "Success! Build ${env.BUILD_NUMBER} deployed successfully. link https://gallery-pvy3.onrender.com"
             }
         }
-        }charlesondabu_ip1
+        }
     }
 }
